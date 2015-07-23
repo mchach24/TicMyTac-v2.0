@@ -1,4 +1,4 @@
-$.fn.drawCircle = function(id) {
+$.fn.drawCircle = function (id) {
 	var c = document.getElementById(id);
 	var ctx = c.getContext("2d");
 	ctx.beginPath();
@@ -7,11 +7,19 @@ $.fn.drawCircle = function(id) {
 	ctx.stroke();
 }
 
-for ( canvasNum = 1; canvasNum <= 1; canvasNum++) {
-    var canvasNum = canvasNum.toString();
-    alert(canvasNum + typeof canvasNum);
-    canvasNum = canvasNum - 1;
-    var array = [1,2];
-    var canId = $("canvas[canvasElement=array[canvasNum]]").attr("id");
-    alert(canId);
+function assignCanvasId() {
+    var canvasNumber = 1;
+    while (canvasNumber <= 81) {
+        var canvasNumber = canvasNumber.toString();
+        var canvas = $("canvas[canvas-number='" + canvasNumber +"']");
+        var parentId = canvas.parents(".subGame").attr("id");
+        for (row = 1; row <= 3; row++) {
+            for (column = 1; column <= 3; column++) {
+                canvas.attr("id","'" + parentId + "-ca" + canvasNumber + "-r" + row + "c" + column +"'");
+                canvasNumber++;
+            }
+        }
+    }
 }
+
+assignCanvasId();

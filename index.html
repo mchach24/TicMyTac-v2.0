@@ -1,185 +1,181 @@
-<!doctype html>
-<html>
-
 <head>
-	<title>TicMyTac</title>
-	
-	<meta charset="utf-8"/>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-	
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	
-	<link href="style.css" rel="stylesheet">
-</head>
-<body>
-	<div class="container-fluid game">
-		<div class="row">
-			<div class="subGame" id="r1c1">
-                <div class="subRow">
-                    <canvas canvasElement="1" height="75px" width="75px" id="f11"></canvas>
-                    <canvas canvasElement="2" height="75px" width="75px" id="notfdfkladsjf"></canvas>
-                    <canvas canvasElement="3" height="75px" width="75px" id=""></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas canvasElement="4" height="75px" width="75px" id=""></canvas>
-                    <canvas canvasElement="5" height="75px" width="75px" id=""></canvas>
-                    <canvas canvasElement="6" height="75px" width="75px" id=""></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas canvasElement="7" height="75px" width="75px" id=""></canvas>
-                    <canvas canvasElement="8" height="75px" width="75px" id=""></canvas>
-                    <canvas canvasElement="9" height="75px" width="75px" id=""></canvas>
-                </div>
-            </div>
-			<div class="subGame" id="r1c2">
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r1c2-r1c1"></canvas>
-                    <canvas height="75px" width="75px" id="r1c2-r1c2"></canvas>
-                    <canvas height="75px" width="75px" id="r1c2-r1c3"></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r1c2-r2c1"></canvas>
-                    <canvas height="75px" width="75px" id="r1c2-r2c2"></canvas>
-                    <canvas height="75px" width="75px" id="r1c2-r2c3"></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r1c2-r3c1"></canvas>
-                    <canvas height="75px" width="75px" id="r1c2-r3c2"></canvas>
-                    <canvas height="75px" width="75px" id="r1c2-r3c3"></canvas>
-                </div>
-            </div>
-			<div class="subGame" id="r1c3">
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r1c3-r1c1"></canvas>
-                    <canvas height="75px" width="75px" id="r1c3-r1c2"></canvas>
-                    <canvas height="75px" width="75px" id="r1c3-r1c3"></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r1c3-r2c1"></canvas>
-                    <canvas height="75px" width="75px" id="r1c3-r2c2"></canvas>
-                    <canvas height="75px" width="75px" id="r1c3-r2c3"></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r1c3-r3c1"></canvas>
-                    <canvas height="75px" width="75px" id="r1c3-r3c2"></canvas>
-                    <canvas height="75px" width="75px" id="r1c3-r3c3"></canvas>
-                </div>
-            </div>
-		</div>
-		<div class="row">
-			<div class="subGame" id="r2c1">
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r2c1-r1"></canvas>
-                    <canvas height="75px" width="75px" id="r2c1"></canvas>
-                    <canvas height="75px" width="75px" id="r2c1"></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r2c1"></canvas>
-                    <canvas height="75px" width="75px" id="r2c1"></canvas>
-                    <canvas height="75px" width="75px" id="r2c1"></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r2c1"></canvas>
-                    <canvas height="75px" width="75px" id="r2c1"></canvas>
-                    <canvas height="75px" width="75px" id="r2c1"></canvas>
-                </div>
-            </div>
-			<div class="subGame" id="r2c2">
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r2c2"></canvas>
-                    <canvas height="75px" width="75px" id="r2c2"></canvas>
-                    <canvas height="75px" width="75px" id="r2c2"></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r2c2"></canvas>
-                    <canvas height="75px" width="75px" id="r2c2"></canvas>
-                    <canvas height="75px" width="75px" id="r2c2"></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r2c2"></canvas>
-                    <canvas height="75px" width="75px" id="r2c2"></canvas>
-                    <canvas height="75px" width="75px" id="r2c2"></canvas>
-                </div>
-            </div>
-			<div class="subGame" id="r2c3">
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r2c3"></canvas>
-                    <canvas height="75px" width="75px" id="r2c3"></canvas>
-                    <canvas height="75px" width="75px" id="r2c3"></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r2c3"></canvas>
-                    <canvas height="75px" width="75px" id="r2c3"></canvas>
-                    <canvas height="75px" width="75px" id="r2c3"></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id="r2c3"></canvas>
-                    <canvas height="75px" width="75px" id="r2c3"></canvas>
-                    <canvas height="75px" width="75px" id="r2c3"></canvas>
-                </div>
-            </div>
-		</div>
-		<div class="row">
-			<div class="subGame" id="r3c1">
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                </div>
-            </div>
-			<div class="subGame" id="r3c2">
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                </div>
-            </div>
-			<div class="subGame" id="r3c3">
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                </div>
-                <div class="subRow">
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                    <canvas height="75px" width="75px" id=""></canvas>
-                </div>
-            </div>
-		</div>
-	</div>
-	
-	<script src="main.js"></script>
-	
-</body>
+    <title>TicMyTac</title>
 
-</html>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid game">
+        <div class="row">
+            <div class="subGame" id="r1c1">
+                <div class="subRow">
+                    <canvas canvas-number="1" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="2" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="3" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="4" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="5" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="6" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="7" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="8" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="9" height="75px" width="75px" id=""></canvas>
+                </div>
+            </div>
+            <div class="subGame" id="r1c2">
+                <div class="subRow">
+                    <canvas canvas-number="10" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="11" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="12" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="13" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="14" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="15" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="16" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="17" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="18" height="75px" width="75px" id=""></canvas>
+                </div>
+            </div>
+            <div class="subGame" id="r1c3">
+                <div class="subRow">
+                    <canvas canvas-number="19" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="20" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="21" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="22" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="23" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="24" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="25" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="26" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="27" height="75px" width="75px" id=""></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="subGame" id="r2c1">
+                <div class="subRow">
+                    <canvas canvas-number="28" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="29" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="30" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="31" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="32" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="33" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="34" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="35" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="36" height="75px" width="75px" id=""></canvas>
+                </div>
+            </div>
+            <div class="subGame" id="r2c2">
+                <div class="subRow">
+                    <canvas canvas-number="37" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="38" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="39" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="40" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="41" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="42" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="43" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="44" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="45" height="75px" width="75px" id=""></canvas>
+                </div>
+            </div>
+            <div class="subGame" id="r2c3">
+                <div class="subRow">
+                    <canvas canvas-number="46" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="47" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="48" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="49" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="50" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="51" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="52" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="53" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="54" height="75px" width="75px" id=""></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="subGame" id="r3c1">
+                <div class="subRow">
+                    <canvas canvas-number="55" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="56" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="57" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="58" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="59" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="60" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="61" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="62" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="63" height="75px" width="75px" id=""></canvas>
+                </div>
+            </div>
+            <div class="subGame" id="r3c2">
+                <div class="subRow">
+                    <canvas canvas-number="64" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="65" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="66" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="67" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="68" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="69" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="70" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="71" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="72" height="75px" width="75px" id=""></canvas>
+                </div>
+            </div>
+            <div class="subGame" id="r3c3">
+                <div class="subRow">
+                    <canvas canvas-number="73" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="74" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="75" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="76" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="77" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="78" height="75px" width="75px" id=""></canvas>
+                </div>
+                <div class="subRow">
+                    <canvas canvas-number="79" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="80" height="75px" width="75px" id=""></canvas>
+                    <canvas canvas-number="81" height="75px" width="75px" id=""></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
