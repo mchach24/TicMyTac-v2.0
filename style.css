@@ -8,18 +8,6 @@ row {
 
 canvas {
     background-color: #A7A7A7;
-    width: 100%;    
-}
-
-.border-bottom {
-    border-bottom: 2px solid black;
-}
-
-.border-right {
-    border-right: 2px solid black;
-}
-
-.border-both {
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    width: 100%;
+    height: auto;
 }
