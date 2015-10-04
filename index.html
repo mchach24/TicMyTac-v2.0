@@ -18,37 +18,33 @@
 </head>
 
 <body>
-    
-    <div class="container-fluid">
-        
-        <div class="container">
+            
+        <div class="container" id="mainContainer">
         
             <div class="row">
-                <div class="col-md-9">
-                    <canvas class="col-md-12" id="game">Canvases are not supported by your browser. Update your browser.</canvas>
-                    <!-- This is not responsive and looks absolutely horrible on mobile devices. It will probably be hard to solve that.
-                    <div class="col-md-12">
-                        <canvas class="subGame col-md-4 border-both" id="r1c1"></canvas>
-                        <canvas class="subGame col-md-4 border-both" id="r1c2"></canvas>
-                        <canvas class="subGame col-md-4 border-bottom" id="r1c3"></canvas>
+                <div class="col-md-9" id="gameContainer">
+                    <!-- <canvas class="col-md-12" id="game">Canvases are not supported by your browser. Update your browser.</canvas> -->
+                    <!-- This is not responsive and looks absolutely horrible on mobile devices. It will probably be hard to solve that. -->
+                    <div class="col-md-12 row gameRow">
+                        <canvas class="subGame col-md-4" id="r1c1"></canvas>
+                        <canvas class="subGame col-md-4" id="r1c2"></canvas>
+                        <canvas class="subGame col-md-4" id="r1c3"></canvas>
                     </div>
-                    <div class="col-md-12">
-                        <canvas class="subGame col-md-4 border-both" id="r2c1"></canvas>
-                        <canvas class="subGame col-md-4 border-both" id="r2c2"></canvas>
-                        <canvas class="subGame col-md-4 border-bottom" id="r2c3"></canvas>
+                    <div class="col-md-12 row gameRow">
+                        <canvas class="subGame col-md-4" id="r2c1"></canvas>
+                        <canvas class="subGame col-md-4" id="r2c2"></canvas>
+                        <canvas class="subGame col-md-4" id="r2c3"></canvas>
                     </div>
-                    <div class="col-md-12">
-                        <canvas class="subGame col-md-4 border-right" id="r3c1"></canvas>
-                        <canvas class="subGame col-md-4 border-right" id="r3c2"></canvas>
+                    <div class="col-md-12 row gameRow">
+                        <canvas class="subGame col-md-4" id="r3c1"></canvas>
+                        <canvas class="subGame col-md-4" id="r3c2"></canvas>
                         <canvas class="subGame col-md-4" id="r3c3"></canvas>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="col-md-3">This column will be for game stats, multiplayer info, chat?, etc.</div>
             </div>
         
         </div>
-        
-    </div>
 
     <script src="master.js"></script>
 

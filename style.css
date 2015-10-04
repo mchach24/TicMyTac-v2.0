@@ -1,11 +1,20 @@
-.container {
+.container, .container-fluid {
     padding-top: 10px;
+}
+
+.gameRow {
+    width: 98%;
+    margin: auto;
+}
+
+#gameContainer {
+    padding-bottom: 15px;   
 }
 
 canvas {
     background-color: #E0E0E0;
     padding: 15px;
-    margin: auto;
+    margin: 3px;
     /*width: 100%;
     height: auto;*/
 }

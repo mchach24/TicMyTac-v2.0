@@ -1,6 +1,8 @@
-// setup/miscellaneous code
+// setup/miscellaneous code file
 
-var game = $("#game");
+var game = $(".subGame");
+var doc = $(document);
+var win = $(window);
 var width, twoThirdWidth, oneThirdWidth;
 
 
@@ -17,27 +19,35 @@ $(window).on('load', updateBoardSize);
 $(window).after('resize', updateBoardSize, 10);
     
 // Sets height equal to width.
-function updateBoardSize() {
-    var boardWidth = game.width() + "px";
-    game.height(boardWidth); // CSS height property
-    game.attr("width", boardWidth); // HTML width attribute
-    game.attr("height", boardWidth); // HTML height attr
+function updateBoardSize() {    
+    /*width = game.width();
+
+    width -= width % 3;*/
     
-    width = game.width(); // (818px) (On 1920x1080 as far as I know)
+    width = $(".gameRow").width() / 3 - 40;
+    width -= width % 3;
     
-    var remainder = width % 9; //These three lines set width to a multiple of 9, so that both a subgame's width and a square's width are divisible by 3.
-    width -= remainder; // (810px)
     game.width(width + "px");       //CSS width property
     game.height(width + "px");      //CSS height property
     game.attr("width", width + "px");  // HTML canvas width attr
     game.attr("height", width + "px");  // HTML canvas height attr
     
-    twoThirdWidth = width / 1.5; // (540px)
-    oneThirdWidth = width / 3;   // (270px)
+    twoThirdWidth = width / 1.5;
+    oneThirdWidth = width / 3;
     
-    drawBoard();
+    if ($(document).width() <= 992) {
+        if ($(document).width() <= 768) {
+            $("#mainContainer").removeClass("container").addClass("container-fluid");
+        }
+        game.css("margin","0px");   
+    }
+    else {
+        game.css("margin","3px");   
+    }
+    
+    //drawBoard();
 }
-
+/*
 function drawBoard() {
     var canvas = game[0]; // jQuery object as vanilla javascript DOM object
     var ctx = canvas.getContext('2d');
@@ -87,4 +97,4 @@ function translateToBoardPos(xOnCanvas, yOnCanvas) {
     var squareDimension = subgameDimension / 3; // 50 for constant
     // subGame 1: (27,27) - (243, 243); 2: (297, 27) - (513, 243); 3: (567, 27) - (783, 243)
     
-}
+}*/
