@@ -2,12 +2,23 @@
     padding-top: 10px;
 }
 
-row {
-    width: 475px;
+canvas {
+    background-color: #E0E0E0;
+    padding: 15px;
+    margin: auto;
+    /*width: 100%;
+    height: auto;*/
+}
+/*
+.border-bottom {
+    border-bottom: 1px solid black;   
 }
 
-canvas {
-    background-color: #A7A7A7;
-    width: 100%;
-    height: auto;
+.border-right {
+    border-right: 1px solid black;   
 }
+
+.border-both {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}*/
