@@ -1,0 +1,26 @@
+body.height(win.height());
+
+mainContainer.outerHeight(win.height());
+
+mainRow.outerHeight(win.height());
+gameContainer.outerHeight(win.height()).outerWidth(win.height());
+gameRow.width(gameContainer.width());
+
+var gameRowWidth = gameRow.width();
+var totalRowWidth = gameRow.outerWidth();
+var subGameWidth = gameRowWidth / 3 - 40;
+
+game.width(subGameWidth + "px");       //CSS width property
+game.height(subGameWidth + "px");      //CSS height property
+game.attr("width", subGameWidth + "px");  // HTML canvas width attr
+game.attr("height", subGameWidth + "px");  // HTML canvas height attr
+
+twoThirdWidth = subGameWidth / 1.5;
+oneThirdWidth = subGameWidth / 3;
+
+if ($(document).width() <= 992) {
+    game.css("margin","0px");
+}
+else {
+    game.css("margin","2px");
+}

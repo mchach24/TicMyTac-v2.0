@@ -1,33 +1,14 @@
-.container, .container-fluid {
-    padding-top: 10px;
+body {
+    /*overflow: hidden; /*Removes scrollbar and scroll capability, to make it full screen. */
+    background-color: #F9F9F9;
 }
 
-.gameRow {
-    width: 98%;
-    margin: auto;
+#mainContainer {
+    margin-top: 50px;
 }
 
-#gameContainer {
-    padding-bottom: 15px;   
-}
-
-canvas {
+.subGame {
     background-color: #E0E0E0;
-    padding: 15px;
-    margin: 3px;
-    /*width: 100%;
-    height: auto;*/
+    padding: 0;
+    width: 33%;
 }
-/*
-.border-bottom {
-    border-bottom: 1px solid black;   
-}
-
-.border-right {
-    border-right: 1px solid black;   
-}
-
-.border-both {
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-}*/

@@ -10,43 +10,39 @@
     <meta name="description" content="Super Tic Tac Toe Ultimate TicMyTac">
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <link href="style.css" rel="stylesheet">
 </head>
-
 <body>
-            
+
         <div class="container" id="mainContainer">
         
-            <div class="row">
                 <div class="col-md-9" id="gameContainer">
-                    <!-- <canvas class="col-md-12" id="game">Canvases are not supported by your browser. Update your browser.</canvas> -->
-                    <!-- This is not responsive and looks absolutely horrible on mobile devices. It will probably be hard to solve that. -->
-                    <div class="col-md-12 row gameRow">
-                        <canvas class="subGame col-md-4" id="r1c1"></canvas>
-                        <canvas class="subGame col-md-4" id="r1c2"></canvas>
-                        <canvas class="subGame col-md-4" id="r1c3"></canvas>
+                    <div class="gameRow row">
+                        <canvas class="subGame" id="r1c1">Canvas not supported.</canvas>
+                        <canvas class="subGame" id="r1c2"></canvas>
+                        <canvas class="subGame" id="r1c3"></canvas>
                     </div>
-                    <div class="col-md-12 row gameRow">
-                        <canvas class="subGame col-md-4" id="r2c1"></canvas>
-                        <canvas class="subGame col-md-4" id="r2c2"></canvas>
-                        <canvas class="subGame col-md-4" id="r2c3"></canvas>
+                    <div class="gameRow row">
+                        <canvas class="subGame" id="r2c1"></canvas>
+                        <canvas class="subGame" id="r2c2"></canvas>
+                        <canvas class="subGame" id="r2c3"></canvas>
                     </div>
-                    <div class="col-md-12 row gameRow">
-                        <canvas class="subGame col-md-4" id="r3c1"></canvas>
-                        <canvas class="subGame col-md-4" id="r3c2"></canvas>
-                        <canvas class="subGame col-md-4" id="r3c3"></canvas>
+                    <div class="gameRow row">
+                        <canvas class="subGame" id="r3c1"></canvas>
+                        <canvas class="subGame" id="r3c2"></canvas>
+                        <canvas class="subGame" id="r3c3"></canvas>
                     </div>
                 </div>
-                <div class="col-md-3">This column will be for game stats, multiplayer info, chat?, etc.</div>
-            </div>
+                <div class="col-md-3" id="info-column">
+                    <p>This column will be for game stats, multiplayer info, chat?, etc.</p>
+                </div>
         
-        </div>
+        </div> <!-- #mainContainer -->
 
-    <script src="master.js"></script>
+    <script src="Scripts/view.js"></script>
 
 </body>
 </html>
