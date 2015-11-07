@@ -1,16 +1,15 @@
 var doc = $(document);
 var body = $(document.body);
-var win = $(window);
+var pageWindow = $(window);
 
 var mainContainer = $('#mainContainer');
 var gameContainer = $('#gameContainer');
 var gameRow = $('.gameRow');
 var subGame = $('.subGame');
 
-win.on('load', updateBoardSize);
-win.on('resize', updateBoardSize);
+pageWindow.on('load', updateBoardSize);
+pageWindow.on('resize', updateBoardSize);
 
 function updateBoardSize() {
     subGame.height(subGame.width());
-    
 }

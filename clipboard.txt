@@ -12,4 +12,3 @@ else {
 x -= subGame.offset().left + parseInt(subGame.css("padding-left").replace("px",""));
 y -= subGame.offset().top + parseInt(subGame.css("padding-top").replace("px",""));
 console.log("(" + x + "," + y + ")");
-translateToBoardPos(x, y);
