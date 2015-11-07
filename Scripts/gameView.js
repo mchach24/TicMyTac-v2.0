@@ -7,12 +7,21 @@ var gameContainerObject = $('#gameContainer');
 var gameRowObject = $('.gameRow');
 var subGameObject = $('.subGame');
 
-pageWindow.on('load', updateBoardSize);
+pageWindow.on('load', setupGame);
 pageWindow.on('resize', updateBoardSize);
+
+function setupGame() {
+    updateBoardSize();
+    drawBoard();
+}
 
 function updateBoardSize() {
     subGameObject.height(subGameObject.width());
 
+}
+
+function drawBoard() {
+    
 }
 
 /**
@@ -42,6 +51,8 @@ function drawX(subGame) {
     ctx.lineTo(subGame.width - 5, subGame.height - 5);
     ctx.moveTo(subGame.width - 5, 5);
     ctx.lineTo(5, subGame.height - 5);
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = "#212121";
     ctx.stroke();
 }
 
@@ -49,6 +60,8 @@ function drawO(subGame) {
     var ctx = subGame.getContext('2d');
     
     ctx.beginPath();
-    ctx.arc(subGame.width/2, subGame.height/2, subGame.width/2.25, 0, 2 * Math.PI);
+    ctx.arc(subGame.width/2, subGame.height/2, subGame.width/2.12, 0, 2 * Math.PI);
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = "#212121";
     ctx.stroke();
 }

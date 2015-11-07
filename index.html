@@ -21,19 +21,19 @@
         
                 <div class="col-md-9" id="gameContainer">
                     <div class="gameRow row">
-                        <canvas class="subGame col-xs-4" id="r1c1" height="200" width="200"></canvas>
-                        <canvas class="subGame col-xs-4" id="r1c2" height="200" width="200"></canvas>
-                        <canvas class="subGame col-xs-4" id="r1c3" height="200" width="200"></canvas>
+                        <canvas class="subGame col-xs-4" id="r1c1" subGame="0" height="200" width="200"></canvas>
+                        <canvas class="subGame col-xs-4" id="r1c2" subGame="1" height="200" width="200"></canvas>
+                        <canvas class="subGame col-xs-4" id="r1c3" subGame="2" height="200" width="200"></canvas>
                     </div>
                     <div class="gameRow row">
-                        <canvas class="subGame col-xs-4" id="r2c1" height="200" width="200"></canvas>
-                        <canvas class="subGame col-xs-4" id="r2c2" height="200" width="200"></canvas>
-                        <canvas class="subGame col-xs-4" id="r2c3" height="200" width="200"></canvas>
+                        <canvas class="subGame col-xs-4" id="r2c1" subGame="3" height="200" width="200"></canvas>
+                        <canvas class="subGame col-xs-4" id="r2c2" subGame="4" height="200" width="200"></canvas>
+                        <canvas class="subGame col-xs-4" id="r2c3" subGame="5" height="200" width="200"></canvas>
                     </div>
                     <div class="gameRow row">
-                        <canvas class="subGame col-xs-4" id="r3c1" height="200" width="200"></canvas>
-                        <canvas class="subGame col-xs-4" id="r3c2" height="200" width="200"></canvas>
-                        <canvas class="subGame col-xs-4" id="r3c3" height="200" width="200"></canvas>
+                        <canvas class="subGame col-xs-4" id="r3c1" subGame="6" height="200" width="200"></canvas>
+                        <canvas class="subGame col-xs-4" id="r3c2" subGame="7" height="200" width="200"></canvas>
+                        <canvas class="subGame col-xs-4" id="r3c3" subGame="8" height="200" width="200"></canvas>
                     </div>
                 </div>
                 <div class="col-md-3" id="info-column">
@@ -41,7 +41,8 @@
                 </div>
         
         </div> <!-- #mainContainer -->
-
+    
+    <script src="Scripts/Classes/class_SubGame.js"></script>
     <script src="Scripts/gameView.js"></script>
     <script src="Scripts/gameModel.js"></script>
     <script src="Scripts/gameController.js"></script>
