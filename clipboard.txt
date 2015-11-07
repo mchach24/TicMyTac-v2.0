@@ -1,26 +1,15 @@
-body.height(win.height());
-
-mainContainer.outerHeight(win.height());
-
-mainRow.outerHeight(win.height());
-gameContainer.outerHeight(win.height()).outerWidth(win.height());
-gameRow.width(gameContainer.width());
-
-var gameRowWidth = gameRow.width();
-var totalRowWidth = gameRow.outerWidth();
-var subGameWidth = gameRowWidth / 3 - 40;
-
-game.width(subGameWidth + "px");       //CSS width property
-game.height(subGameWidth + "px");      //CSS height property
-game.attr("width", subGameWidth + "px");  // HTML canvas width attr
-game.attr("height", subGameWidth + "px");  // HTML canvas height attr
-
-twoThirdWidth = subGameWidth / 1.5;
-oneThirdWidth = subGameWidth / 3;
-
-if ($(document).width() <= 992) {
-    game.css("margin","0px");
+var position;
+var x;
+var y;
+if (event.pageX || event.pageY) {
+	x = event.pageX;
+	y = event.pageY;
 }
 else {
-    game.css("margin","2px");
+	x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+	y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
 }
+x -= subGame.offset().left + parseInt(subGame.css("padding-left").replace("px",""));
+y -= subGame.offset().top + parseInt(subGame.css("padding-top").replace("px",""));
+console.log("(" + x + "," + y + ")");
+translateToBoardPos(x, y);
