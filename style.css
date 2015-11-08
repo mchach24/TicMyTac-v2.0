@@ -4,9 +4,14 @@ body {
 }
 
 #mainContainer {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
+/*
+.gameRow {
+    width: 75%;
+    margin: 0 auto;
+} */
 
 .subGame {
     background-color: #E0E0E0;
