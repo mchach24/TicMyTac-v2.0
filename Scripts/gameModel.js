@@ -109,7 +109,7 @@ function getGameStatus()
     if (winner == 3) {
         var xWins = 0;
         var yWins = 0;
-        for s in subGames {
+        for (s in subGames) {
             if (!s.gameOver) {
                 winner = 0;
                 break;

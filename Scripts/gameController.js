@@ -19,8 +19,68 @@ $(document).ready(function() {
     });
 });
 
+function getSquareNum(canvas, x, y) {
+    if (x > 0 && y > 0 && x <= canvas.width/3 && y <= canvas.height/3) {
+		position = 0;
+		//x = 5;
+		//y = 5;
+	}
+	else if (x > canvas.width/3 && y > 0 && x <= canvas.width/1.5 && y <= canvas.height/3) {
+		position = 1;
+		//x = 55;
+		//y = 5;
+	}
+	else if( x > canvas.width/1.5 && y > 0 && x <= canvas.width && y <= canvas.height/3) {
+		position = 2;
+		//x = 105;
+		//y = 5;
+	}
+	else if (x > 0 && y > canvas.height/3 && x <= canvas.width/3 && y <= canvas.height/1.5) {
+		position = 3;
+		//x = 5;
+		//y = 55;
+	}
+	else if (x > canvas.width/3 && y > canvas.height/3 && x <= canvas.width/1.5 && y <= canvas.height/1.5) {
+		position = 4;
+		//x = 55;
+		//y = 55;
+	}
+	else if (x > canvas.width/1.5 && y > canvas.height/3 && x <= canvas.width && y <= canvas.height/1.5) {
+		position = 5;
+		//x = 105;
+		//y = 55;
+	}
+	else if (x > 0 && y > canvas.height/1.5 && x <= canvas.width/3 && y <= canvas.height) {
+		position = 6;
+		//x = 5;
+		//y = 105;
+	}
+	else if (x > canvas.width/3 && y > canvas.height/1.5 && x <= canvas.width/1.5 && y <= canvas.height) {
+		position = 7;
+		//x = 55;
+		//y = 105;
+	}
+	else if (x > canvas.width/1.5 && y > canvas.height/1.5 && x <= canvas.width && y <= canvas.height) {
+		position = 8;
+		//x = 105;
+		//y = 105;
+	}
+    return position; //{position : position, x : x, y : y};
+}
+
 function processClick(subGame, subGameNumber, x, y) {
-    markBoard(subGame, turn.value); // Defined in gameView.js
-    turn.switch();
+    //figure out which square the x and y correspond to
+    console.log("X: " + x + " Y: " + y);
+    var squareNum = getSquareNum(subGame, x, y);
+    //var squareInfo = getSquareNum(subGame, x, y);
+    //console.log("Square: " + squareInfo.position);
+   // var squareNum = squareInfo.position;
+    //check if the move is valid. if so, handle the view
+    //movePlayed is definined in gameModel.js
+    if (movePlayed(subGameNumber, turn.value, squareNum)) { 
+        markBoard(subGame, turn.value, squareNum); // markBoard() is Defined in gameView.js
+        turn.switch();
+    }
+    
 }
 
