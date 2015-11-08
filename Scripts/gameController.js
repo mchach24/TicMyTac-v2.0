@@ -89,11 +89,17 @@ function processClick(subGame, subGameNumber, x, y) {
     var squareNum = getSquareNum(subGame, x, y);
     //check if the move is valid. if so, handle the view
     //movePlayed is definined in gameModel.js
-    if (movePlayed(subGameNumber, turn.value, squareNum)) { 
+    var moveInfo = movePlayed(subGameNumber, turn.value, squareNum);
+    if (moveInfo.valid) { 
         markBoard(subGame, turn.value, squareNum); // markBoard() is Defined in gameView.js
-        turn.switch();
         //deactivateAllBut(squareNum);
+        if (moveInfo.gameEnded) {
+            //draw the big x or o
+            markBoard(subGame, turn.value);
+            //getGameStatus() to see if the entire game is over
+        }
         setInactiveSubGames();
+        turn.switch();
     }
     
 }

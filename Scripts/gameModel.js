@@ -27,15 +27,13 @@ var gameOver = false;
 */
 function movePlayed(subgameID, turn, squareNum)
 {
-    console.log('move played called');
-    if (subGames[subgameID].movePlayed(turn, squareNum)) {
-        console.log('setting all inactive but call from gameModel.movePlayed()');
+    //console.log('move played called');
+    var moveInfo = subGames[subgameID].movePlayed(turn, squareNum);
+    if (moveInfo.valid) {
+        //console.log('setting all inactive but call from gameModel.movePlayed()');
         this.setAllInactiveBut(squareNum);
-        return true;
     }
-    else {
-        return false;
-    }
+    return moveInfo;
 }
 
 /**
