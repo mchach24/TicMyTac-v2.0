@@ -15,6 +15,10 @@ body {
     margin: 0px;
 }
 
+.subGame.inactive {
+    background-color: #BDBDBD;
+}
+
 #r1c1 {
     border-right: 2px solid black;
     border-bottom: 2px solid black;

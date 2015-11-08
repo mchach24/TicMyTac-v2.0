@@ -114,10 +114,10 @@ function drawX(subGame, x, y, size) {
         ctx.beginPath();
         
         ctx.moveTo(x,y);
-        ctx.lineTo(size + x, size + y);
+        ctx.lineTo(size + x - 5, size + y - 5);
         
-        ctx.moveTo(size + x, y);
-        ctx.lineTo(x, size + y);
+        ctx.moveTo(size + x - 5, y);
+        ctx.lineTo(x, size + y - 5);
     }
     ctx.lineWidth = 3;
     ctx.strokeStyle = "#2121cc";
@@ -144,4 +144,19 @@ function drawO(subGame, x, y, radius) {
     ctx.strokeStyle = "#cc2121";
     ctx.stroke();
     
+}
+
+function setSubGameViewState(subGameNum, active) {
+    var id = getSubGameId(subGameNum);
+    if (active) {
+        $(id).removeClass('inactive');
+    } else {
+        $(id).addClass('inactive');
+    }
+    
+}
+
+function getSubGameId(subGameNum) {
+    var idArray = ['#r1c1', '#r1c2','#r1c3','#r2c1','#r2c2','#r2c3','#r3c1','#r3c2','#r3c3'];
+    return idArray[subGameNum];
 }

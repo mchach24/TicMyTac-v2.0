@@ -78,7 +78,7 @@ function getSquareNum(canvas, x, y) {
 
 function setInactiveSubGames() {
     for (i = 0; i < 9; i++) {
-        //setSubGameViewState(getSubGameStatus(i).active);
+        setSubGameViewState(i, getSubGameStatus(i).active);
         console.log('set view state for subgame ' + i + ' to ' + getSubGameStatus(i).active);
     }
 }
@@ -93,7 +93,7 @@ function processClick(subGame, subGameNumber, x, y) {
         markBoard(subGame, turn.value, squareNum); // markBoard() is Defined in gameView.js
         turn.switch();
         //deactivateAllBut(squareNum);
-        this.setInactiveSubGames();
+        setInactiveSubGames();
     }
     
 }
