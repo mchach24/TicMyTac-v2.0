@@ -28,6 +28,7 @@ var gameOver = false;
 function movePlayed(subgameID, turn, squareNum)
 {
     //console.log('move played called');
+    if (gameOver) return {valid : false};
     var moveInfo = subGames[subgameID].movePlayed(turn, squareNum);
     if (moveInfo.valid) {
         //console.log('setting all inactive but call from gameModel.movePlayed()');
@@ -142,6 +143,9 @@ function getGameStatus()
         } 
     }
     
+    if (winner != 0) {
+        gameOver = true;
+    }
     return winner;
 }
 
