@@ -12,16 +12,11 @@ pageWindow.on('resize', updateBoardSize);
 
 function setupGame() {
     updateBoardSize();
-    drawBoard();
+    drawSubBoard();
 }
 
 function updateBoardSize() {
     subGameObject.height(subGameObject.width());
-
-}
-
-function drawBoard() {
-    
 }
 
 /**
@@ -31,6 +26,30 @@ function drawBoard() {
 * @param {string} turn Current turn; 'X' or 'O'
 * @param {number} square Optional for the square clicked within subGame
 */
+
+function drawSubBoard() {
+    $.each(subGameObject, function() {
+        var ctx = $(this)[0].getContext('2d');
+        var size = $(this)[0].width;
+        var padding = 5;
+        
+        ctx.moveTo(size / 3, padding);
+        ctx.lineTo(size / 3, size - padding);
+        
+        ctx.moveTo(size / 1.5, padding);
+        ctx.lineTo(size / 1.5, size - padding);
+        
+        ctx.moveTo(padding, size / 3);
+        ctx.lineTo(size - padding, size / 3);
+        
+        ctx.moveTo(padding, size / 1.5);
+        ctx.lineTo(size - padding, size / 1.5);
+        
+        ctx.strokeStyle = '#3E3E3E'
+        ctx.stroke();
+    });
+}
+
 function markBoard(subGame, turn, square) {
     if (turn.toLowerCase() === 'x') 
         drawX(subGame);
