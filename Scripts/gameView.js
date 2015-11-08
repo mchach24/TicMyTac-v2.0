@@ -17,6 +17,11 @@ function setupGame() {
 
 function updateBoardSize() {
     subGameObject.height(subGameObject.width());
+    subGameWidth = subGameObject.width();
+    subGameHeight = subGameObject.height();
+    console.log('Global subgame Height: ' + subGameHeight + ' glob sub width: ' + subGameWidth);
+    //subGameObject.attr('height', subGameObject.height()).attr('width', subGameObject.width());
+    //drawSubBoard();
 }
 
 /**
@@ -51,8 +56,22 @@ function drawSubBoard() {
 }
 
 function markBoard(subGame, turn, square) {
+    var size = 0;
+    console.log('Square: ' + square);
+    if (square !== undefined) {
+        size = subGame.width / 3 - 1/30 * subGame.width;
+    }
+    var offsets = [1/30, 11/30, 21/30],
+        xOffset = square % 3,
+        yOffset = Math.floor(square / 3);
+    console.log('xOffset: ' + xOffset + ', yOffset: ' + yOffset);
+    var coordinates = { 
+        x: subGame.width * offsets[xOffset], 
+        y: subGame.height * offsets[yOffset] 
+    }; 
+    console.log('X begin draw: ' + coordinates.x + ', y:' + coordinates.y + ', size: ' + size);
     if (turn.toLowerCase() === 'x') 
-        drawX(subGame);
+        drawX(subGame, coordinates.x, coordinates.y, size);
     else
         drawO(subGame);
 }
@@ -62,20 +81,33 @@ function markBoard(subGame, turn, square) {
 * draws an x
 * @param {DOM Object} subGame JS (not jQuery) subGame clicked
 */
-function drawX(subGame) {
+function drawX(subGame, x, y, size) {
     var ctx = subGame.getContext('2d');
     
-    ctx.beginPath();
-    ctx.moveTo(5,5);
-    ctx.lineTo(subGame.width - 5, subGame.height - 5);
-    ctx.moveTo(subGame.width - 5, 5);
-    ctx.lineTo(5, subGame.height - 5);
+    if (size === 0) {
+        var widthSize = subGame.width - 5;
+        ctx.beginPath();
+        
+        ctx.moveTo(5, 5);
+        ctx.lineTo(widthSize, widthSize);
+        
+        ctx.moveTo(widthSize, 5);
+        ctx.lineTo(5, widthSize);
+    } else {
+        ctx.beginPath();
+        
+        ctx.moveTo(x,y);
+        ctx.lineTo(size + x, size + y);
+        
+        ctx.moveTo(size + x, y);
+        ctx.lineTo(x, size + y);
+    }
     ctx.lineWidth = 3;
     ctx.strokeStyle = "#212121";
     ctx.stroke();
 }
 
-function drawO(subGame) {
+function drawO(subGame, x, y, size) {
     var ctx = subGame.getContext('2d');
     
     ctx.beginPath();
