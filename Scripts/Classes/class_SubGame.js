@@ -19,7 +19,7 @@ function SubGame(id)
 	*/
 	this.movePlayed = function(turn, squareId)
 	{        
-		if (this.gameOver) return false;
+		if (this.gameOver || !this.active) return false;
         
         var moveIsValid = false;
         
@@ -35,13 +35,16 @@ function SubGame(id)
             moveIsValid = true;
 		}
 		
-        this.detectGameOver;
+        this.detectGameOver();
 		return moveIsValid;
 		
 	}
+    
+    
 	
 	this.detectGameOver = function()
 	{
+        console.log('Detecting game over');
 		//alert(idArray);
 		//horizontal row 1 win check
 		if (idArray[0] != 0 && idArray[0] == idArray[1] && idArray[0] == idArray[2]) {
@@ -105,6 +108,7 @@ function SubGame(id)
 			}
 		}
 
+        console.log('It has been detected');
 		this.gameOver = true;
 	}
 	

@@ -59,21 +59,38 @@ function markBoard(subGame, turn, square) {
     var size = 0;
     console.log('Square: ' + square);
     if (square !== undefined) {
-        size = subGame.width / 3 - 1/30 * subGame.width;
+        if (turn === 'X') {
+            size = subGame.width / 3;   //length of the line for the X
+            console.log('Setting size for X');
+        }
+        else {
+            size = subGame.width / 6;   //radius for the circle O
+            console.log('Seeting size for O');
+        }
+        
+        size = size - 1/30 * subGame.width;
     }
-    var offsets = [1/30, 11/30, 21/30],
+    var xOffsetList = [1/30, 11/30, 21/30],
+        oOffsetList = [5/30, 15/30, 25/30]
         xOffset = square % 3,
         yOffset = Math.floor(square / 3);
-    console.log('xOffset: ' + xOffset + ', yOffset: ' + yOffset);
+    
+    var offsets = xOffsetList;
+    if (turn !== 'X') {
+        offsets = oOffsetList;
+    }
+        
+    
+    console.log('xOffset: ' + offsets[xOffset] + ', yOffset: ' + offsets[yOffset]);
     var coordinates = { 
         x: subGame.width * offsets[xOffset], 
         y: subGame.height * offsets[yOffset] 
     }; 
     console.log('X begin draw: ' + coordinates.x + ', y:' + coordinates.y + ', size: ' + size);
-    if (turn.toLowerCase() === 'x') 
+    if (turn === 'X') 
         drawX(subGame, coordinates.x, coordinates.y, size);
     else
-        drawO(subGame);
+        drawO(subGame, coordinates.x, coordinates.y, size);
 }
 
 /**
@@ -103,16 +120,28 @@ function drawX(subGame, x, y, size) {
         ctx.lineTo(x, size + y);
     }
     ctx.lineWidth = 3;
-    ctx.strokeStyle = "#212121";
+    ctx.strokeStyle = "#2121cc";
     ctx.stroke();
 }
 
-function drawO(subGame, x, y, size) {
+function drawO(subGame, x, y, radius) {
     var ctx = subGame.getContext('2d');
     
-    ctx.beginPath();
-    ctx.arc(subGame.width/2, subGame.height/2, subGame.width/2.12, 0, 2 * Math.PI);
+    if (radius === 0) {
+        ctx.beginPath();
+        ctx.arc(subGame.width/2, subGame.height/2, subGame.width/2.12, 0, 2 * Math.PI);
+        
+    } else {
+        //var centerX = xPos;
+        //var centerY = yPos;
+        //var radius = size;
+
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+  
+    }
     ctx.lineWidth = 3;
-    ctx.strokeStyle = "#212121";
+    ctx.strokeStyle = "#cc2121";
     ctx.stroke();
+    
 }

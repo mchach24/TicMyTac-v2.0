@@ -137,3 +137,14 @@ function getGameStatus()
     
     return winner;
 }
+
+function setSubGameActive(id, active) {
+        if (subGames[id].gameOver) return false;
+        subGames[id].active = active;
+        return true;
+}
+
+for (var i = 0; i < 9; i++)
+    {
+        setSubGameActive(i, true);
+    }

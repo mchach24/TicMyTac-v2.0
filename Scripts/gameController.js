@@ -20,51 +20,58 @@ $(document).ready(function() {
 });
 
 function getSquareNum(canvas, x, y) {
-    if (x > 0 && y > 0 && x <= canvas.width/3 && y <= canvas.height/3) {
+    /*console.log('HTML Width: ' + canvas.width);
+    console.log('HTML Height: ' + canvas.height);*/
+    w = subGameWidth;
+    h = subGameHeight;
+    /*console.log('CSS Width: ' + canvas.width);
+    console.log('CSS Height: ' + canvas.height);*/
+    if (x > 0 && y > 0 && x <= w/3 && y <= h/3) {
 		position = 0;
 		//x = 5;
 		//y = 5;
 	}
-	else if (x > canvas.width/3 && y > 0 && x <= canvas.width/1.5 && y <= canvas.height/3) {
+	else if (x > w/3 && y > 0 && x <= w/1.5 && y <= h/3) {
 		position = 1;
 		//x = 55;
 		//y = 5;
 	}
-	else if( x > canvas.width/1.5 && y > 0 && x <= canvas.width && y <= canvas.height/3) {
+	else if( x > w/1.5 && y > 0 && x <= w && y <= h/3) {
 		position = 2;
 		//x = 105;
 		//y = 5;
 	}
-	else if (x > 0 && y > canvas.height/3 && x <= canvas.width/3 && y <= canvas.height/1.5) {
+	else if (x > 0 && y > h/3 && x <= w/3 && y <= h/1.5) {
 		position = 3;
 		//x = 5;
 		//y = 55;
 	}
-	else if (x > canvas.width/3 && y > canvas.height/3 && x <= canvas.width/1.5 && y <= canvas.height/1.5) {
+	else if (x > w/3 && y > h/3 && x <= w/1.5 && y <= h/1.5) {
 		position = 4;
 		//x = 55;
 		//y = 55;
 	}
-	else if (x > canvas.width/1.5 && y > canvas.height/3 && x <= canvas.width && y <= canvas.height/1.5) {
+	else if (x > w/1.5 && y > h/3 && x <= w && y <= h/1.5) {
 		position = 5;
 		//x = 105;
 		//y = 55;
 	}
-	else if (x > 0 && y > canvas.height/1.5 && x <= canvas.width/3 && y <= canvas.height) {
+	else if (x > 0 && y > h/1.5 && x <= w/3 && y <= h) {
 		position = 6;
 		//x = 5;
 		//y = 105;
 	}
-	else if (x > canvas.width/3 && y > canvas.height/1.5 && x <= canvas.width/1.5 && y <= canvas.height) {
+	else if (x > w/3 && y > h/1.5 && x <= w/1.5 && y <= h) {
 		position = 7;
 		//x = 55;
 		//y = 105;
 	}
-	else if (x > canvas.width/1.5 && y > canvas.height/1.5 && x <= canvas.width && y <= canvas.height) {
+	else if (x > w/1.5 && y > h/1.5 && x <= w && y <= h) {
 		position = 8;
 		//x = 105;
 		//y = 105;
 	}
+    console.log('Position: ' + position);
     return position; //{position : position, x : x, y : y};
 }
 
@@ -81,17 +88,22 @@ function deactivateAllBut(subGameNumber)
 		for (i = 0; i < 9; i++)
 		{
 			//subGames[i].setActive();
-            if (!subGames[i].gameOver)
-                enableSubGame(i);
+            if (!subGames[i].gameOver) {
+                //enableSubGame(i);
+                setSubGameActive(i, true);
+            }
 		}
 	}
 	else
 	{
 		//subGames[x].setActive();
+        setSubGameActive(subGameNumber, true);
 		for (i = 0; i < 9; i++)
 		{
-			if (i != subGameNumber)
-                disableSubGame(i);
+			if (i != subGameNumber) {
+                //disableSubGame(i);
+                setSubGameActive(i, false);
+            }
 		}
 	}
 }
@@ -105,7 +117,7 @@ function processClick(subGame, subGameNumber, x, y) {
     if (movePlayed(subGameNumber, turn.value, squareNum)) { 
         markBoard(subGame, turn.value, squareNum); // markBoard() is Defined in gameView.js
         turn.switch();
-        deactivateAllBut(subGameNumber);
+        deactivateAllBut(squareNum);
     }
     
 }
