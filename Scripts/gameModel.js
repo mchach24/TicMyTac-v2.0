@@ -27,7 +27,15 @@ var gameOver = false;
 */
 function movePlayed(subgameID, turn, squareNum)
 {
-    return subGames[subgameID].movePlayed(turn, squareNum);
+    console.log('move played called');
+    if (subGames[subgameID].movePlayed(turn, squareNum)) {
+        console.log('setting all inactive but call from gameModel.movePlayed()');
+        this.setAllInactiveBut(squareNum);
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 /**
@@ -39,7 +47,8 @@ function movePlayed(subgameID, turn, squareNum)
 */
 function getSubGameStatus(subgameID)
 {
-    return subGames[subgameID].winner;
+    return {winner : subGames[subgameID].winner,
+            active : subGames[subgameID].active};
 }
 
 
@@ -138,13 +147,43 @@ function getGameStatus()
     return winner;
 }
 
-function setSubGameActive(id, active) {
+/**
+* This functions sets the board subgames active or inactive after each move
+* based on where the player placed his or her move
+* @param {int}  subGameNumber  The subgame canvas that is to be active
+*/
+function setAllInactiveBut(subGameNumber)
+{
+	if (subGames[subGameNumber].gameOver)
+	{
+		for (i = 0; i < 9; i++)
+		{
+            if (!subGames[i].gameOver) {
+                this.subGames[i].active = true;
+            }
+		}
+	}
+	else
+	{
+        console.log('setting ' + subGameNumber + ' to ' + this.subGames[subGameNumber].active);
+        this.subGames[subGameNumber].active = true;
+		for (i = 0; i < 9; i++)
+		{
+			if (i != subGameNumber) {
+                console.log('setting ' + subGameNumber + ' to ' + this.subGames[subGameNumber].active);
+                this.subGames[i].active = false;
+            }
+		}
+	}
+}
+
+/*function setSubGameActive(id, active) {
         if (subGames[id].gameOver) return false;
         subGames[id].active = active;
         return true;
-}
+}*/
 
-for (var i = 0; i < 9; i++)
-    {
-        setSubGameActive(i, true);
-    }
+//for (var i = 0; i < 9; i++)
+//    {
+//        setSubGameActive(i, true);
+//    }

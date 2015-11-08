@@ -75,37 +75,12 @@ function getSquareNum(canvas, x, y) {
     return position; //{position : position, x : x, y : y};
 }
 
-/**
-* This functions sets the board subgames active or inactive after each move
-* based on where the player placed his or her move
-* @param {int}  subGameNumber  The subgame canvas that is to be active
-*/
-function deactivateAllBut(subGameNumber)
-{
-	//alert("mainGame - deactiveAllBut()");
-	if (subGames[subGameNumber].gameOver)
-	{
-		for (i = 0; i < 9; i++)
-		{
-			//subGames[i].setActive();
-            if (!subGames[i].gameOver) {
-                //enableSubGame(i);
-                setSubGameActive(i, true);
-            }
-		}
-	}
-	else
-	{
-		//subGames[x].setActive();
-        setSubGameActive(subGameNumber, true);
-		for (i = 0; i < 9; i++)
-		{
-			if (i != subGameNumber) {
-                //disableSubGame(i);
-                setSubGameActive(i, false);
-            }
-		}
-	}
+
+function setInactiveSubGames() {
+    for (i = 0; i < 9; i++) {
+        //setSubGameViewState(getSubGameStatus(i).active);
+        console.log('set view state for subgame ' + i + ' to ' + getSubGameStatus(i).active);
+    }
 }
 
 function processClick(subGame, subGameNumber, x, y) {
@@ -117,7 +92,8 @@ function processClick(subGame, subGameNumber, x, y) {
     if (movePlayed(subGameNumber, turn.value, squareNum)) { 
         markBoard(subGame, turn.value, squareNum); // markBoard() is Defined in gameView.js
         turn.switch();
-        deactivateAllBut(squareNum);
+        //deactivateAllBut(squareNum);
+        this.setInactiveSubGames();
     }
     
 }

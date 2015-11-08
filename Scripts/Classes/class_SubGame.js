@@ -9,7 +9,7 @@ function SubGame(id)
 	//this.canvas = canvas;
 	this.gameOver = false;
 	var idArray = [0,0,0,0,0,0,0,0,0]; //0 - empty, 1 - X, 2 - O
-	//this.active = true;
+	this.active = true;
 	this.winner = 0; // 0 - game not over, 1 - X won, 2 - O won, 3 - tie
     
     /**
