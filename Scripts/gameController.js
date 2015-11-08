@@ -100,6 +100,11 @@ function processClick(subGame, subGameNumber, x, y) {
         }
         setInactiveSubGames();
         turn.switch();
+        var gameStatus = getGameStatus(); //returns 0, 1, 2, or 3
+        if (gameStatus > 0)
+        {
+             alertGameOver(); 
+        }
     }
     
 }
